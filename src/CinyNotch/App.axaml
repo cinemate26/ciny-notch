@@ -1,0 +1,140 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CinyNotch.App"
+             RequestedThemeVariant="Dark">
+
+  <Application.Resources>
+    <!-- Sliders: quiet white track instead of the system accent. -->
+    <SolidColorBrush x:Key="SliderTrackFill" Color="#33FFFFFF" />
+    <SolidColorBrush x:Key="SliderTrackFillPointerOver" Color="#40FFFFFF" />
+    <SolidColorBrush x:Key="SliderTrackFillPressed" Color="#40FFFFFF" />
+    <SolidColorBrush x:Key="SliderTrackValueFill" Color="#F2F2F4" />
+    <SolidColorBrush x:Key="SliderTrackValueFillPointerOver" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SliderTrackValueFillPressed" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SliderThumbBackground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SliderThumbBackgroundPressed" Color="#E6E6EA" />
+
+    <!-- Text boxes: glass-friendly fills. -->
+    <SolidColorBrush x:Key="TextControlBackground" Color="#14FFFFFF" />
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#1FFFFFFF" />
+    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="#26FFFFFF" />
+    <SolidColorBrush x:Key="TextControlBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="#26FFFFFF" />
+    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#4DFFFFFF" />
+    <SolidColorBrush x:Key="TextControlForeground" Color="#F6F6F8" />
+    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="#F6F6F8" />
+    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="#9C9CA6" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForegroundPointerOver" Color="#A8A8B0" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused" Color="#8C8C96" />
+    <SolidColorBrush x:Key="TextControlSelectionHighlightColor" Color="#5A7FA8" />
+  </Application.Resources>
+
+  <Application.Styles>
+    <FluentTheme />
+
+    <!-- Icon glyphs come from the icon font that ships with Windows. -->
+    <Style Selector="TextBlock.icon">
+      <Setter Property="FontFamily" Value="Segoe Fluent Icons, Segoe MDL2 Assets" />
+      <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+
+    <!-- Chip: small rounded text button. -->
+    <Style Selector="Button.chip">
+      <Setter Property="Background" Value="#1AFFFFFF" />
+      <Setter Property="Foreground" Value="#F2F2F4" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="11,5" />
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="FontWeight" Value="Light" />
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="MinHeight" Value="0" />
+    </Style>
+    <Style Selector="Button.chip:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#2EFFFFFF" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+    <Style Selector="Button.chip:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#40FFFFFF" />
+    </Style>
+    <Style Selector="Button.chip.on">
+      <Setter Property="Background" Value="#E6F2F2F4" />
+      <Setter Property="Foreground" Value="#111114" />
+      <Setter Property="FontWeight" Value="Regular" />
+    </Style>
+    <Style Selector="Button.chip.on:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#FFFFFF" />
+      <Setter Property="Foreground" Value="#111114" />
+    </Style>
+
+    <!-- Round icon button. -->
+    <Style Selector="Button.round">
+      <Setter Property="Background" Value="#1AFFFFFF" />
+      <Setter Property="Foreground" Value="#F6F6F8" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="MinHeight" Value="0" />
+    </Style>
+    <Style Selector="Button.round:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#33FFFFFF" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+    <Style Selector="Button.round:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#4DFFFFFF" />
+    </Style>
+    <Style Selector="Button.round.flat">
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.round.on">
+      <Setter Property="Background" Value="#E6F2F2F4" />
+      <Setter Property="Foreground" Value="#111114" />
+    </Style>
+    <Style Selector="Button.round.on:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#FFFFFF" />
+      <Setter Property="Foreground" Value="#111114" />
+    </Style>
+    <Style Selector="Button.round.alert">
+      <Setter Property="Background" Value="#E6FF6B6B" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+
+    <!-- Row: a list entry that highlights on hover. -->
+    <Style Selector="Border.row">
+      <Setter Property="Background" Value="#0DFFFFFF" />
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Padding" Value="10,7" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style Selector="Border.row:pointerover">
+      <Setter Property="Background" Value="#1FFFFFFF" />
+    </Style>
+
+    <!-- Tabs along the top of the card. -->
+    <Style Selector="Border.tab">
+      <Setter Property="Padding" Value="10,4" />
+      <Setter Property="CornerRadius" Value="11" />
+      <Setter Property="Margin" Value="0,0,3,0" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style Selector="Border.tab:pointerover">
+      <Setter Property="Background" Value="#14FFFFFF" />
+    </Style>
+    <Style Selector="Border.tab.on">
+      <Setter Property="Background" Value="#24FFFFFF" />
+    </Style>
+    <Style Selector="Border.tab > TextBlock">
+      <Setter Property="FontSize" Value="12.5" />
+      <Setter Property="Foreground" Value="#C4C4CC" />
+    </Style>
+    <Style Selector="Border.tab.on > TextBlock">
+      <Setter Property="Foreground" Value="#F6F6F8" />
+      <Setter Property="FontWeight" Value="Regular" />
+    </Style>
+  </Application.Styles>
+</Application>

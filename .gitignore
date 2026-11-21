@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+app/
+*.pdb
+*.user
+.vs/
+
+# Personal data the app writes at runtime (settings, clipboard history, reminders, logs)
+data/
+
+# Private build notes and AI session records
+docs/
+CLAUDE.md
+
+# Satoshi is licensed per user (ITF Free Font License) and may not be redistributed.
+# Download it from fontshare.com and drop the .otf files into src/CinyNotch/Assets/Fonts.
+src/CinyNotch/Assets/Fonts/*.otf
+src/CinyNotch/Assets/Fonts/*.ttf
+src/CinyNotch/Assets/Fonts/Satoshi-FFL.txt

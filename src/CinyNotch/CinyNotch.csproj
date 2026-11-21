@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>CinyNotch</AssemblyName>
+    <RootNamespace>CinyNotch</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- The notch icon (drawn by tools\make-icon.ps1): the .exe, Start menu and taskbar use it. -->
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Product>Ciny Notch</Product>
+    <AssemblyTitle>Ciny Notch</AssemblyTitle>
+    <Description>Ciny Notch</Description>
+    <Version>1.0.0</Version>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- Classic COM interop is used for the Windows audio interfaces. -->
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <NoWarn>$(NoWarn);SYSLIB1054;CA1416</NoWarn>
+  </PropertyGroup>
+
+  <!-- Satoshi (Indian Type Foundry, ITF Free Font License) is embedded unmodified when its .otf
+       files are in Assets\Fonts. They aren't in the repo (the licence forbids redistribution);
+       without them the app uses the Windows UI font. -->
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\Fonts\*.otf" />
+    <AvaloniaResource Include="Assets\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.6" />
+    <!-- App icons (Spotify, browsers) read from installed programs at runtime (MIT). -->
+    <PackageReference Include="System.Drawing.Common" Version="11.0.0" />
+    <!-- Laptop screen brightness through WMI (MIT). -->
+    <PackageReference Include="System.Management" Version="11.0.0" />
+  </ItemGroup>
+
+</Project>
